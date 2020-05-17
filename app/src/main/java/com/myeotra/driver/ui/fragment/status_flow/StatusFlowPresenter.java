@@ -1,0 +1,52 @@
+package com.myeotra.driver.ui.fragment.status_flow;
+
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.myeotra.driver.base.BasePresenter;
+import com.myeotra.driver.data.network.APIClient;
+
+import java.util.HashMap;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
+
+public class StatusFlowPresenter<V extends StatusFlowIView> extends BasePresenter<V> implements StatusFlowIPresenter<V> {
+
+    private String TAG = "AAAA";
+
+    @Override
+    public void statusUpdate(HashMap<String, Object> obj, Integer id) {
+
+        Log.e("data", "statusUpdate StatusFlow req: " + new Gson().toJson(obj) + " id " + id);
+
+        getCompositeDisposable().add(APIClient
+                .getAPIClient()
+                .updateRequest(obj, id)
+                .subscribeOn(Schedulers.computation())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(getMvpView()::onSuccess, getMvpView()::onError));
+
+
+    }
+
+    @Override
+    public void waitingTime(String time, String requestId) {
+        getCompositeDisposable().add(APIClient
+                .getAPIClient()
+                .waitingTime(time, requestId)
+                .subscribeOn(Schedulers.computation())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(getMvpView()::onWaitingTimeSuccess, getMvpView()::onError));
+    }
+
+    @Override
+    public void checkWaitingTime(String requestId) {
+        getCompositeDisposable().add(APIClient
+                .getAPIClient()
+                .CheckWaitingTime(requestId)
+                .subscribeOn(Schedulers.computation())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(getMvpView()::onWaitingTimeSuccess, getMvpView()::onError));
+    }
+}

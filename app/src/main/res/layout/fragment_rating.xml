@@ -1,0 +1,162 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/_4sdp"
+    tools:context=".ui.bottomsheetdialog.rating.RatingDialogFragment"
+    tools:ignore="UnusedAttribute">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_top_right_left"
+        android:baselineAligned="false"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="Rating"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryText" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/view" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_img"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:src="@drawable/ic_user_placeholder"
+                app:civ_border_width="@dimen/_1sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_toEndOf="@+id/provider_image"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:ignore="ObsoleteLayoutParam,RtlHardcoded">
+
+                <TextView
+                    android:id="@+id/textProvidername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:text=""
+                    android:textColor="#4b4b4b" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:text="How is your Trip?"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16ssp" />
+
+                <TextView
+                    android:id="@+id/rate_with_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text=""
+                    android:textColor="@color/darkgray"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RatingBar
+                    android:id="@+id/user_rating"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="false"
+                    android:numStars="5"
+                    android:progressTint="@color/yellow"
+                    android:stepSize="1" />
+
+                <!--<android.support.v7.widget.AppCompatRatingBar-->
+                <!--android:ID="@+ID/user_rating"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="-8sp"-->
+                <!--android:progressTint="@color/ratingBarColor"-->
+                <!--android:rating="3"-->
+                <!--android:scaleX="0.6"-->
+                <!--android:scaleY="0.6"-->
+                <!--tools:ignore="UnusedAttribute" />-->
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/comments"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/edit_text_rounded_corner_bg"
+                android:gravity="start"
+                android:hint="@string/write_your_reviews"
+
+
+                android:inputType="textMultiLine|textPersonName|textCapWords"
+                android:padding="@dimen/_8sdp"
+                android:text=""
+                android:textSize="@dimen/text_14" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:visibility="visible">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvComment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/button_round_primary"
+                android:text="@string/submit"
+                android:textColor="#FFF" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

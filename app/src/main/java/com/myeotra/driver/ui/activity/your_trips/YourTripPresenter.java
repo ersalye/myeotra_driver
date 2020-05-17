@@ -1,0 +1,6 @@
+package com.myeotra.driver.ui.activity.your_trips;
+
+import com.myeotra.driver.base.BasePresenter;
+
+public class YourTripPresenter<V extends YourTripIView> extends BasePresenter<V> implements YourTripIPresenter<V> {
+}

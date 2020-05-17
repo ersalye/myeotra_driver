@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/activity_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_top_right_left"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_15sdp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Taxi Driver Toll Charge"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/_12sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/view" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/_12sdp"
+                    android:text="Tolls were  used  for this trip?" />
+
+                <RadioGroup
+
+                    android:id="@+id/rdogrptoll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        app:buttonTint="@color/yellow" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        app:buttonTint="@color/yellow" />
+
+
+                </RadioGroup>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_55sdp">
+
+                    <LinearLayout
+                        android:id="@+id/loutemail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ivemail"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center_vertical"
+                            android:padding="@dimen/_5sdp"
+                            android:src="@drawable/ic_cash" />
+
+                        <View
+                            android:layout_width="@dimen/_1sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:layout_toRightOf="@+id/ivemail"
+                            android:background="@color/view" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:hint="Enter Toll Charge Amount"
+                            android:textColorHint="@color/colorSecondaryText"
+                            app:hintTextColor="@color/colorSecondaryText">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/toll_amount"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:inputType="number"
+                                android:textColor="@color/colorPrimaryText"
+                                android:textSize="@dimen/_14ssp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_below="@+id/loutemail"
+                        android:background="@color/view" />
+                </RelativeLayout>
+
+
+                <!--<TextView
+                    android:id="@+id/currency_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:fontFamily="@font/clanpro_book"
+                    android:gravity="center"
+                    android:text="$"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_12sdp" />
+
+                <EditText
+                    android:id="@+id/toll_amount"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:gravity="center|start"
+                    android:hint="@string/add_toll"
+                    android:inputType="numberDecimal|number"
+                    android:lines="1"
+                    android:maxLength="6"
+                    android:padding="@dimen/_10sdp"
+                    android:text=""
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_11sdp" />-->
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/view" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/dismiss"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/dismiss"
+                android:textAllCaps="false"
+                android:visibility="visible" />
+
+            <View
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="match_parent" />
+
+            <!--<Button
+                android:ID="@+ID/submit"
+                style="@style/MyButton.Accent"
+                android:text="@string/submit" />-->
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/submit"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
